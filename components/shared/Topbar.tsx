@@ -1,8 +1,9 @@
-import { OrganizationSwitcher, SignOutButton, SignedIn } from "@clerk/nextjs";
+import { OrganizationSwitcher, SignedIn, SignOutButton } from "@clerk/nextjs";
+import { dark } from "@clerk/themes";
 import Image from "next/image";
 import Link from "next/link";
-import { dark } from "@clerk/themes";
-const Topbar = () => {
+
+function Topbar() {
   return (
     <nav className="topbar">
       <Link href="/" className="flex items-center gap-4">
@@ -14,10 +15,10 @@ const Topbar = () => {
         <div className="block md:hidden">
           <SignedIn>
             <SignOutButton>
-              <div className="flex cursor-pointer ">
+              <div className="flex cursor-pointer">
                 <Image
                   src="/assets/logout.svg"
-                  alt="logoot"
+                  alt="logout"
                   width={24}
                   height={24}
                 />
@@ -37,6 +38,6 @@ const Topbar = () => {
       </div>
     </nav>
   );
-};
+}
 
 export default Topbar;

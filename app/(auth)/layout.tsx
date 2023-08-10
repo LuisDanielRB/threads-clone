@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import "../globals.css";
+import { dark } from "@clerk/themes";
 
 export const metadata: Metadata = {
   title: "Threads",
@@ -17,7 +18,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      appearance={{
+        baseTheme: dark,
+      }}
+    >
       <html lang="en">
         <body className={`${inter.className} bg-dark-1`}>
           <div className="w-fll flex justify-center items-center min-h-screen">
